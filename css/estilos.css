@@ -1,5 +1,15 @@
 .data-hora {
     text-align: center;
+}
 
-    
+#btn-dialog-fechar{
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: black;
+    background-color: rgb(200, 75, 75);
+}
+#dialog-ponto{
+    border-radius: 5px;
 }
