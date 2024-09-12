@@ -1,3 +1,5 @@
+// Recuperações de parametros de data/hora do HTML
+
 const diaSemana = document.getElementById("dia-semana");
 const diaMesAno = document.getElementById("dia-mes-ano");
 const horaMinSeg= document.getElementById("hora-min-seg");
@@ -8,12 +10,14 @@ const arrayDayWeek = [ "Domingo","Segunda-feira","Terça-feira","Quarta-feira","
 
 function dataCompleta () {
     const date = new Date();
-    return date.getDate () + "/" + (date.getMonth() +1) + "/" + date.getFullYear();
+    return String(date.getDate()).padStart(2,"0") + "/" + String((date.getMonth() +1)).padStart(2,"0") + "/" + date.getFullYear();
 }
+
+// String ().padStart(2"0")
 
 function horaCompleta() {
     const date = new Date();
-    return date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+    return String(date.getHours()).padStart (2,"0") + ":" + String(date.getMinutes()).padStart(2,"0") + ":" + String(date.getSeconds()).padStart(2,"0");
 }
 
 function daySemana () {
@@ -29,7 +33,7 @@ function atualizaHora(){
 setInterval(atualizaHora, 1000);
 
 diaMesAno.textContent = dataCompleta();
-diaSemana.textContent = horaCompleta();
+diaSemana.textContent = daySemana();
 
 
 // Parametros segunda tela -----------------------------------------------------------------------------
@@ -48,5 +52,32 @@ const btnDialogFechar = document.getElementById("btn-dialog-fechar");
 btnDialogFechar.addEventListener("click", () => {
     dialogPonto.close();
 });
+// Parametros para Localização.
+
+navigator.geolocation.getCurrentPosition((position) => {
+});
+
+
+//Parametros de Registro de Ponto
+
+const btnDialogRegistrarPonto = document.getElementById("btn-dialog-registrar-ponto");
+btnDialogRegistrarPonto.addEventListener("click", () => {
+
+    let data = dataCompleta ();
+    let hora = horaCompleta ();
+    let TipoPonto = document.getElementById("select-tipo-ponto").value;
+
+    let Ponto = {
+        "data" : data,
+        "hora" : hora,
+        "tipo" : TipoPonto,
+        "id" : 1
+    }
+
+    localStorage.setItem("registro", JSON.stringify(Ponto));
+
+    console.log(Ponto);
+});
+
 
 

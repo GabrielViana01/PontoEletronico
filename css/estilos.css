@@ -3,7 +3,7 @@
 }
 
 #btn-dialog-fechar{
-    border-radius: 100px;
+    border-radius: 0px;
     position: absolute;
     top: 0;
     right: 0;
