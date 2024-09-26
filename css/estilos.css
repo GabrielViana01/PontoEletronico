@@ -1,8 +1,27 @@
+/* 
+DATA E HORA
+ */
 .data-hora {
     text-align: center;
 }
 
-#btn-dialog-fechar{
+/* 
+Formatação da Data e Hora 
+*/
+
+.data-hora p {
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 3rem;
+}
+
+/* 
+Botão de Fechar
+ */
+
+ #btn-dialog-fechar{
+    
     border-radius: 0px;
     position: absolute;
     top: 0;
@@ -10,6 +29,52 @@
     color: black;
     background-color: rgb(200, 75, 75);
 }
-#dialog-ponto{
+/*
+Botao Registrar Ponto
+*/
+#btn-registrar-ponto{
+    background-color: blue;
+    color: white;
+    border-radius: 2px;
+    height: 80px;
+    width: 320px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+
+
+/* ----------------------------------------------------------- */ 
+
+/* 
+Segunda Página 
+*/
+
+#dialog-ponto {
     border-radius: 5px;
+    width: 300px;
+    height: 300px;
+}
+
+/*
+Div do registrar Ponto
+*/
+
+#div-btn-registrar-ponto{
+    text-align: center;
+}
+
+/* Botão de Registrar ponto da segunda página*/
+#btn-dialog-registrar-ponto {
+    position: absolute;
+    top: 210px;
+    right: 100px;
+    color:white;
+    background-color: blue;
+}
+
+#select-tipo-ponto{
+    position: absolute;
+    padding: 8px;
+    font-size: 1.5rem;
 }
